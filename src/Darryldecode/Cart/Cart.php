@@ -69,6 +69,12 @@ class Cart
      */
     protected $currentItemId;
 
+    protected $shippingAddress;
+
+    protected $billingAddress;
+    
+
+
     /**
      * our object constructor
      *
@@ -108,6 +114,30 @@ class Cart
 
         return $this;
     }
+
+    public function setShippingAddress($address)
+    {
+        $this->shippingAddress = $address;
+        $this->save($this);
+    }
+
+    public function getShippingAddress()
+    {
+        return $this->shippingAddress;
+    }
+
+
+    public function setBillingAddress($address)
+    {
+        $this->billingAddress = $address;
+        $this->save($this);
+    }
+
+    public function getBillingAddress()
+    {
+        return $this->billingAddress;
+    }
+
 
     /**
      * get instance name of the cart
